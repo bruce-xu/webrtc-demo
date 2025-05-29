@@ -1,0 +1,23 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  compatibilityDate: '2025-05-15',
+  devtools: { enabled: true },
+  modules: [
+    '@element-plus/nuxt'
+  ],
+  nitro: {
+    experimental: {
+      websocket: true
+    },
+  },
+  app: {
+    head: {
+      script: [
+        {
+          src: '/video-view.js',
+          defer: true
+        }
+      ],
+    }
+  }
+})
