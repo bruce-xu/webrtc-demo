@@ -49,7 +49,9 @@ export default {
   name: 'Room',
   mounted () {
     if (this.canSupportWebRTC()) {
-      socket = io(`${location.protocol}//${location.hostname}:3001`);
+      socket = io('/', {
+        path: '/api/socket.io'
+      });
       this.initSocketEvents();
       this.initVIDEO_VIEWSdk();
     }
